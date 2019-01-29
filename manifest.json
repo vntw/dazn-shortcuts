@@ -1,0 +1,20 @@
+{
+    "manifest_version": 2,
+    "name": "DAZN Shortcuts",
+    "description": "Adds useful keyboard shortcuts to the DAZN.com player.",
+    "version": "1.0.0",
+    "icons": {
+        "128": "icon.png"
+    },
+    "content_scripts": [
+        {
+            "js": ["index.js"],
+            "matches": ["*://www.dazn.com/*"],
+            "run_at": "document_end"
+        },
+        {
+            "css": ["index.css"],
+            "matches": ["*://www.dazn.com/*"]
+        }
+    ]
+}
