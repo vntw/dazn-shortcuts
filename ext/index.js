@@ -1,17 +1,17 @@
-const SELECTOR_FULLSCREEN = '.PlayerView .fullscreenButton';
-const SELECTOR_VOLUME = '.PlayerView .VolumeSlider button';
-const SELECTOR_LIVE = '.PlayerView .liveIndicator';
-const SELECTOR_VIDEO = '.PlayerView video';
+const SELECTOR_FULLSCREEN = 'button[class^="fullscreen___fullscreen___"]';
+const SELECTOR_VOLUME = 'button[class^="volumeControl___"]';
+const SELECTOR_LIVE = 'button[class^="liveIndicator___"]';
+const SELECTOR_VIDEO = '[class^="player___player___"] video';
 
 function click(selector) {
-    const elem = document.querySelector(selector)
+    const elem = document.querySelector(selector);
     if (elem) {
         elem.click();
     }
 }
 
 function pauseVideo() {
-    const elem = document.querySelector(SELECTOR_VIDEO)
+    const elem = document.querySelector(SELECTOR_VIDEO);
 
     if (!elem) {
         return;

@@ -13,10 +13,6 @@
             "js": ["index.js"],
             "matches": ["*://www.dazn.com/*"],
             "run_at": "document_end"
-        },
-        {
-            "css": ["index.css"],
-            "matches": ["*://www.dazn.com/*"]
         }
     ]
 }
