@@ -2,9 +2,12 @@ const SELECTOR_FULLSCREEN = 'button[class^="fullscreen___fullscreen___"]';
 const SELECTOR_VOLUME = 'button[class^="volumeControl___"]';
 const SELECTOR_LIVE = 'button[class^="liveIndicator___"]';
 const SELECTOR_VIDEO = '[class^="player___player___"] video';
+const SELECTOR_SKIP_FORWARD = 'button[data-test-id="PLAYER_BUTTON_FAST_FORWARD"], button[data-test-id="PLAYER_BUTTON_FAST_FORWARD PLAYER_BUTTON_FAST_FORWARD_VISIBLE"]';
+const SELECTOR_SKIP_BACKWARD = 'button[data-test-id="PLAYER_BUTTON_REWIND"], button[data-test-id="PLAYER_BUTTON_REWIND PLAYER_BUTTON_REWIND_VISIBLE"]';
 
 function click(selector) {
     const elem = document.querySelector(selector);
+
     if (elem) {
         elem.click();
     }
@@ -21,6 +24,16 @@ function pauseVideo() {
         elem.play();
     } else {
         elem.pause();
+    }
+}
+
+function skip(direction) {
+    const elem = document.querySelector(
+        direction === -1 ? SELECTOR_SKIP_BACKWARD : SELECTOR_SKIP_FORWARD
+    );
+
+    if (elem) {
+        elem.click();
     }
 }
 
@@ -46,6 +59,16 @@ window.onkeyup = function (e) {
         // k
         case 75:
             pauseVideo();
+            break;
+
+        // arrow left
+        case 37:
+            skip(-1);
+            break;
+
+        // arrow right
+        case 39:
+            skip(1);
             break;
     }
 };
