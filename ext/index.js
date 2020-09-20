@@ -1,9 +1,9 @@
 const SELECTOR_FULLSCREEN = 'button[class^="fullscreen___fullscreen___"]';
-const SELECTOR_VOLUME = 'button[class^="volumeControl___"]';
-const SELECTOR_LIVE = 'button[class^="liveIndicator___"]';
-const SELECTOR_VIDEO = '[class^="player___player___"] video';
-const SELECTOR_SKIP_FORWARD = 'button[data-test-id="PLAYER_BUTTON_FAST_FORWARD"], button[data-test-id="PLAYER_BUTTON_FAST_FORWARD PLAYER_BUTTON_FAST_FORWARD_VISIBLE"]';
-const SELECTOR_SKIP_BACKWARD = 'button[data-test-id="PLAYER_BUTTON_REWIND"], button[data-test-id="PLAYER_BUTTON_REWIND PLAYER_BUTTON_REWIND_VISIBLE"]';
+const SELECTOR_VOLUME = 'button[class^="volumeControl___volume-mute-unmute___"]';
+const SELECTOR_LIVE = '[class^="liveIndicator___live-indicator___"], [class^="liveIndicator___return-to-live___"]';
+const SELECTOR_VIDEO = '[data-test-id="PLAYER_CONTAINER"] video';
+const SELECTOR_SKIP_FORWARD = '[data-test-id="PLAYER_BUTTON_FAST_FORWARD"], [data-test-id="PLAYER_BUTTON_FAST_FORWARD PLAYER_BUTTON_FAST_FORWARD_VISIBLE"]';
+const SELECTOR_SKIP_BACKWARD = '[data-test-id="PLAYER_BUTTON_REWIND"], [data-test-id="PLAYER_BUTTON_REWIND PLAYER_BUTTON_REWIND_VISIBLE"]';
 
 function click(selector) {
     const elem = document.querySelector(selector);
